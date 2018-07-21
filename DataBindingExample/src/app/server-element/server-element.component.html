@@ -1,0 +1,18 @@
+<div
+  class="card mb-3">
+  <div class="card-header">{{ element.name }}</div>
+  <div class="card-body">
+     <!-- Example to use ngIf/else -->
+      <!-- <strong *ngIf="element.type === 'server'; else blueprint" 
+        style="color: red">{{ element.content }}</strong>
+      <ng-template #blueprint>
+        <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+      </ng-template> --> 
+    <!-- <p>P tag: 
+      <strong *ngIf="element.type === 'server'" 
+        style="color: red">{{ element.content }}</strong>
+      <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+    </p> -->
+    <ng-content></ng-content>
+  </div>
+</div>
