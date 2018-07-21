@@ -1,0 +1,51 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12">
+      <img style = "height: 100px; width: 150px" src = "assets/images/butter-chicken-curry.png" alt = "imageName" class = "image-responsive" />
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-sm-12">
+      Recipe name : {{ recipeItem.name }}
+    </div>
+  </div>
+  <div class = "row">
+      <div class = "col-sm-12">
+        <div class = "btn-group open">
+          <button class = "btn btn-success dropdown-toggle"
+          (click) = toggleDropDown()>Manage Recipe</button>
+          <ul class = "dropdown-menu" 
+          [ngClass] = "{show: isOpen === true}">
+            <li class = "dropdown-item">
+              <a 
+                (click) = "addIngredientToSL(recipeItem.ingredients)">
+                Add to shopping list</a>
+            </li>
+            <li class = "dropdown-item">
+                <a 
+                  (click) = "editRecipe()"
+                  >Edit Recipe</a>
+              </li>
+              <li class = "dropdown-item">
+                  <a >Delete Recipe</a>
+                </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class = "row">
+        <div class = "col-sm-12">
+          {{ recipeItem.description }}
+        </div>
+      </div>
+      <div class="row">
+        <div class = "col-sm-12">
+          <ul class = "list-group">
+            <li class = "list-group-item"
+              *ngFor = "let ingredient of recipeItem.ingredients" >
+              {{ ingredient.name }} - Amount: {{ ingredient.amount }}
+            </li>
+          </ul>
+        </div>
+      </div>
+</div>

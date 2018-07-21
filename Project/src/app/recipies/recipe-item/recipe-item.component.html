@@ -1,0 +1,24 @@
+<a 
+style = "cursor: pointer"
+class = "list-group-item clearfix"
+(click) = "getRecipeDetails()"
+routerLinkActive = "active"
+
+>
+  <div class = "float-left">
+      <h4 class = "list-group-item-heading text-dark">
+          {{recipeItem.name}}
+      </h4>
+      <p class = "list-group-item-text text-secondary">
+          {{recipeItem.description}}
+      </p>
+  </div>
+  <span class = "float-right">
+      <img 
+      [src] = "recipeItem.imagePath"
+      [alt] = "recipeItem.name" 
+      class = "img-responsive" style = "width:100px" />
+  </span>
+</a>
+
+<!-- [routerLink] = "[index]" -->

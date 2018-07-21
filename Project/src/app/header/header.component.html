@@ -1,0 +1,40 @@
+<nav class="navbar bg-light navbar-expand-lg navbar-light">
+    <div>
+        <a routerLink = "/"
+            class="navbar-brand navbar-light"> Recipe Book</a>
+    </div>
+    <div class = "navbar">
+      <ul class = "nav navbar-nav mr-auto">
+        <li routerLinkActive = "active" class = "navbar-item">
+            <a  class ="nav-link" 
+            (click) = "onFeatureSelected('recipe')">Recipe</a>
+        </li>
+        <li routerLinkActive = "active" class = "navbar-item">
+            <a  class = "nav-link"
+            (click) = "onFeatureSelected('shopping-list')">Shopping list</a>
+        </li>
+      </ul>
+      <div>
+          <ul class = "navbar-nav nav">
+              <li class = "dropdown navbar-item">
+                  <a class = "nav-link dropdown-toggle"
+                  (click) = toggleDropDown()>Manage</a>
+                  <ul class = "dropdown-menu"
+                  [ngClass] = "{show: isOpen === true}">
+                      <li>
+                        <a >Save Data</a>
+                      </li>
+                      <li>
+                          <a >Fetch Data</a>
+                        </li>
+                    </ul>
+                </li>
+          </ul>
+      </div>
+      
+
+     <!-- <ul class="navbar-nav nav navbar-right">
+        
+      </ul> -->
+    </div>
+</nav>
